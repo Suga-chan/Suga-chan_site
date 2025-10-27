@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>菅ちゃんの自己紹介＆クイズ</title>
+  <meta name="description" content="菅ちゃんの自己紹介ページ。岡山在住の理学療法士。SUNABACOとの出会い、趣味、クイズもあります。" />
+  <style>
+    :root{
+      --bg:#fafafa; --card:#ffffff; --ink:#222; --muted:#666;
+      --accent:#3b82f6; --accent-2:#f59e0b; --success:#16a34a; --danger:#dc2626;
+      --radius:16px; --shadow:0 8px 24px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0; background:var(--bg); color:var(--ink); font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans JP, Arial, sans-serif; line-height:1.6;}
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width: 980px; margin: 0 auto; padding: 24px;}
+    header.sticky{position:sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background:rgba(255,255,255,.8); border-bottom:1px solid #eee; z-index:10;}
+    header .row{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 0;}
+    nav a{margin:0 10px; font-size:14px; color:var(--muted)}
+    nav a:hover{color:var(--ink)}
+    .hero{display:grid; grid-template-columns: 1fr; gap:24px; padding: 32px 0;}
+    .badge{display:inline-block; padding:6px 10px; border:1px solid #ddd; border-radius:999px; font-size:12px; color:#444; background:#fff}
+    .card{background:var(--card); border:1px solid #eee; border-radius:var(--radius); box-shadow:var(--shadow); padding:24px;}
+    .grid{display:grid; gap:16px;}
+    @media (min-width: 880px){
+      .hero{grid-template-columns: 1fr 1fr;}
+      .grid-3{grid-template-columns: repeat(3, minmax(0, 1fr));}
+      .grid-2{grid-template-columns: repeat(2, minmax(0, 1fr));}
+    }
+    h1{font-size: clamp(28px, 4vw, 36px); margin:0 0 8px}
+    h2{font-size: 22px; margin: 0 0 8px}
+    .muted{color:var(--muted)}
+    .chip{display:inline-block; font-size:12px; padding:6px 10px; border:1px solid #ddd; border-radius:999px; background:#fff; margin:4px 6px 0 0}
+    .timeline{position:relative; border-left: 2px solid #eee; margin-left:8px; padding-left:16px}
+    .timeline .item{margin: 12px 0; position:relative}
+    .timeline .item::before{content:''; position:absolute; left:-11px; top:4px; width:10px; height:10px; background:#111; border-radius:50%}
+    .btn{display:inline-block; padding:10px 14px; border-radius:10px; border:1px solid #ddd; background:#fff; cursor:pointer}
+    .btn:hover{background:#f5f5f5}
+    .btn.primary{border-color: var(--accent);}
+    .btn.block{display:block; width:100%}
+    .choices .btn{margin:6px 0}
+    .btn.correct{background:#ecfdf5; border-color:#86efac}
+    .btn.wrong{background:#fef2f2; border-color:#fecaca}
+    .footer{color:#888; text-align:center; padding: 28px 0}
+    .placeholder{display:grid; place-items:center; height:180px; border-radius:14px; background:#e5e7eb; color:#6b7280; border:1px solid #e5e7eb}
+    .stack{display:flex; flex-wrap:wrap; gap:8px; align-items:center}
+    code.inline{background:#f3f4f6; padding:2px 6px; border-radius:6px; border:1px solid #e5e7eb}
+  </style>
+</head>
+<body>
+  <header class="sticky">
+    <div class="container row">
+      <div class="row" style="gap:10px;">
+        <strong>菅ちゃん</strong>
+        <span class="muted">| 理学療法士</span>
+      </div>
+      <nav>
+        <a href="#about">自己紹介</a>
+        <a href="#interests">興味</a>
+        <a href="#quiz">クイズ</a>
+        <a href="#contact">連絡先</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" id="about">
+      <div>
+        <div class="card">
+          <h1>菅ちゃん</h1>
+          <div class="muted">理学療法士 / 岡山</div>
+          <p style="margin-top:10px">
+            SUNABACOとの出会いは上司からの「DX勉強する？」がきっかけ。DX人材育成講座14th受講。PBLでは素敵なチームメンバーといろんな方々に支えられ、かけがえのない経験を取得。
+          </p>
+          <div class="stack" style="margin-top:10px">
+            <span class="chip">主な生息地：岡山</span>
+            <span class="chip">言語：岡山弁(北部) / 鳥取弁(少々)</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <div class="placeholder">No Image</div>
+          <p class="muted" style="margin-top:8px">※画像は使用しません。</p>
+          <div class="grid grid-2" style="margin-top:12px">
+            <div class="card" style="padding:16px">
+              <div class="muted">好きな食べ物</div>
+              <strong>肉全般</strong>
+            </div>
+            <div class="card" style="padding:16px">
+              <div class="muted">職業</div>
+              <strong>理学療法士</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERESTS -->
+    <section id="interests" style="margin-top:24px">
+      <div class="card">
+        <h2>興味・趣味</h2>
+        <div class="stack">
+          <span class="chip">キャンプ</span>
+          <span class="chip">コーヒーを淹れること</span>
+          <span class="chip">草刈り</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" style="margin-top:24px">
+      <div class="card">
+        <h2>自己紹介クイズ</h2>
+        <p class="muted" style="margin:6px 0 16px">このページの内容から出題します。挑戦してみてください！</p>
+        <div id="quiz-box">
+          <div id="meter" class="muted" style="margin-bottom:6px"></div>
+          <div id="question" style="font-weight:700"></div>
+          <div id="choices" class="choices"></div>
+          <div id="explain" class="muted" style="margin-top:8px"></div>
+          <div id="actions" style="margin-top:14px; display:flex; gap:8px">
+            <button id="next" class="btn">次へ</button>
+            <button id="restart" class="btn">最初から</button>
+          </div>
+          <div id="score" style="margin-top:14px; font-weight:700"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="margin-top:24px">
+      <div class="card">
+        <h2>連絡先</h2>
+        <div class="grid grid-3">
+          <a class="card" style="text-decoration:none" href="https://x.com/hosinikuDX" target="_blank" rel="noreferrer">
+            <div class="muted">X</div>
+            <strong>@hosinikuDX</strong>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">© <span id="year"></span> 菅ちゃん</div>
+  </main>
+
+  <script>
+    // プロフィール（編集するとクイズも自動更新されます）
+    const profile = {
+      name: "菅ちゃん",
+      title: "理学療法士",
+      hometown: "岡山",
+      languages: ["岡山弁(北部)", "鳥取弁(少々)"],
+      summary: "SUNABACOとの出会いは上司からの「DX勉強する？」がきっかけ。DX人材育成講座14th受講。PBLでは素敵なチームメンバーといろんな方々に支えられ、かけがえのない経験を取得。",
+      interests: ["キャンプ", "コーヒーを淹れること", "草刈り"],
+      favorites: { food: "肉全般" },
+      contact: { x: "https://x.com/hosinikuDX" }
+    };
+
+    // クイズ生成
+    const quizSettings = { totalQuestions: 5 };
+    function shuffle(a){ const arr=[...a]; for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [arr[i],arr[j]]=[arr[j],arr[i]]} return arr; }
+    function generateQuestions(p){
+      const all = [];
+      all.push({ q: "主な生息地は？", correct: p.hometown, choices:[p.hometown, "東京", "大阪", "福岡"], explain:"自己紹介の基本情報より。" });
+      all.push({ q: "よく話す言葉(方言)は？", correct: p.languages[0], choices:[p.languages[0], "標準語", "関西弁", "博多弁"], explain:"言語（方言）から出題。" });
+      all.push({ q: "職業は？", correct: p.title, choices:[p.title, "教師", "エンジニア", "デザイナー"], explain:"肩書から出題。" });
+      all.push({ q: "好きな食べ物は？", correct: p.favorites.food, choices:[p.favorites.food, "魚", "野菜", "麺類"], explain:"好きな食べ物から出題。" });
+      all.push({ q: "趣味のひとつは？", correct: p.interests[0], choices:[p.interests[0], "ゲーム", "読書", "映画鑑賞"], explain:"興味・趣味より。" });
+      return shuffle(all).slice(0, quizSettings.totalQuestions).map(q => ({ ...q, choices: shuffle(q.choices) }));
+    }
+
+    const state = { idx:0, correct:0, items: generateQuestions(profile) };
+    const $ = (s)=>document.querySelector(s);
+    const meter = $("#meter"), qEl=$("#question"), choices=$("#choices"), explain=$("#explain");
+    const nextBtn=$("#next"), restartBtn=$("#restart"), score=$("#score");
+    function render(){
+      $("#year").textContent = new Date().getFullYear();
+      const total = state.items.length;
+      meter.textContent = `問題 ${state.idx+1} / ${total}`;
+      const item = state.items[state.idx];
+      qEl.textContent = item.q;
+      explain.textContent = "";
+      score.textContent = `スコア: ${state.correct} / ${total}`;
+      choices.innerHTML = "";
+      item.choices.forEach(choice => {
+        const btn = document.createElement("button");
+        btn.className = "btn block";
+        btn.textContent = choice;
+        btn.onclick = () => {
+          const ok = choice === item.correct;
+          if(ok){ state.correct++; btn.classList.add("correct"); explain.textContent = "✅ 正解！ " + item.explain; }
+          else { btn.classList.add("wrong"); explain.textContent = "❌ 不正解… 正解は「" + item.correct + "」。"; }
+          Array.from(choices.children).forEach(b => b.disabled = true);
+          score.textContent = `スコア: ${state.correct} / ${total}`;
+        };
+        choices.appendChild(btn);
+      });
+    }
+    nextBtn.addEventListener("click", ()=>{
+      if(state.idx < state.items.length - 1){ state.idx++; render(); }
+      else {
+        qEl.textContent = "お疲れさまでした！";
+        choices.innerHTML = "";
+        explain.textContent = "これで全問終了です。もう一度遊ぶには「最初から」を押してください。";
+      }
+    });
+    restartBtn.addEventListener("click", ()=>{
+      state.idx = 0; state.correct = 0; state.items = generateQuestions(profile); render();
+    });
+    render();
+  </script>
+</body>
+</html>
